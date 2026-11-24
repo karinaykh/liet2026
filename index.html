@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Try the role-plays · LIET 2026</title>
+<meta name="description" content="Try the four AI leadership role-plays from the LIET 2026 talk “Practising Leadership with Generative AI”.">
+<link rel="icon" href="aicet_logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,400;0,6..12,600;0,6..12,700;1,6..12,600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #F7F5F1;
+    --card: #FFFFFF;
+    --ink: #1C2233;
+    --body: #3A4152;
+    --slate: #5E6577;
+    --hair: #D9D5CC;
+    --line: #C9CED4;
+    --indigo: #4F46C8;  --indigo-tint: #ECEBFA;
+    --amber: #B4560C;   --amber-tint: #FBEBDC;
+    --teal: #13736A;    --teal-tint: #E3F1EE;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Avenir Next", "Avenir", "Nunito Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    line-height: 1.45;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+  }
+  main { width: 100%; max-width: 560px; padding: 40px 16px 32px; }
+
+  /* header */
+  .top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 36px; }
+  .event { font-size: 13px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--slate); }
+  .logo { width: 64px; height: auto; display: block; }
+  h1 { font-size: clamp(32px, 8.5vw, 42px); font-weight: 400; line-height: 1.12; letter-spacing: -.01em; }
+  h1 em { font-weight: 600; font-style: italic; }
+  .bars { display: flex; gap: 8px; margin: 22px 0 18px; }
+  .bars span { width: 56px; height: 6px; border-radius: 3px; }
+  .subtitle { font-size: 17px; color: var(--slate); }
+  .subtitle b { font-weight: 600; }
+  .c-indigo { color: var(--indigo); } .c-amber { color: var(--amber); } .c-teal { color: var(--teal); }
+  .bg-indigo { background: var(--indigo); } .bg-amber { background: var(--amber); } .bg-teal { background: var(--teal); }
+  .authors { margin-top: 18px; font-size: 14px; color: var(--slate); }
+  .authors strong { color: var(--ink); font-weight: 600; }
+
+  /* sections */
+  section { margin-top: 44px; }
+  h2 { font-size: 13px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--indigo); }
+  .lead { margin-top: 6px; font-size: 15px; color: var(--body); }
+
+  .cards { list-style: none; margin-top: 18px; display: grid; gap: 12px; }
+  .card {
+    display: flex; align-items: center; gap: 14px;
+    background: var(--card); border: 1px solid var(--hair); border-radius: 14px;
+    padding: 16px 16px 16px 14px; text-decoration: none; color: inherit;
+    transition: border-color .15s ease, box-shadow .15s ease, transform .15s ease;
+  }
+  .card:hover { border-color: var(--indigo); box-shadow: 0 4px 16px rgba(28,34,51,.08); transform: translateY(-1px); }
+  .card:focus-visible { outline: 3px solid var(--indigo); outline-offset: 2px; }
+  .week {
+    flex: none; width: 58px; text-align: center;
+    background: var(--indigo-tint); color: var(--indigo);
+    border-radius: 10px; padding: 7px 0 6px; line-height: 1.1;
+  }
+  .week small { display: block; font-size: 11px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; }
+  .week span { display: block; font-size: 22px; font-weight: 700; }
+  .card-text { flex: 1; min-width: 0; }
+  .card-title { font-size: 16px; font-weight: 600; line-height: 1.3; }
+  .card-skill { margin-top: 3px; font-size: 14px; color: var(--slate); }
+  .chev { flex: none; color: var(--slate); }
+  .card:hover .chev { color: var(--indigo); }
+
+  .how { margin-top: 16px; display: grid; gap: 6px; font-size: 14px; color: var(--body); }
+  .how p { padding-left: 14px; position: relative; }
+  .how p::before { content: ""; position: absolute; left: 0; top: .62em; width: 5px; height: 5px; border-radius: 50%; background: var(--line); }
+
+  .contact { margin-top: 18px; display: grid; gap: 12px; }
+  .contact a {
+    display: flex; align-items: center; gap: 14px;
+    background: var(--card); border: 1px solid var(--hair); border-radius: 14px;
+    padding: 14px 16px; text-decoration: none; color: inherit;
+    transition: border-color .15s ease;
+  }
+  .contact a:hover { border-color: var(--teal); }
+  .contact a:focus-visible { outline: 3px solid var(--teal); outline-offset: 2px; }
+  .ico { flex: none; width: 40px; height: 40px; border-radius: 10px; display: grid; place-items: center; background: var(--teal-tint); color: var(--teal); }
+  .contact .label { font-size: 13px; color: var(--slate); }
+  .contact .value { font-size: 16px; font-weight: 600; word-break: break-word; }
+  h2.teal { color: var(--teal); }
+
+  footer { margin-top: 52px; padding-top: 18px; border-top: 1px solid var(--hair); font-size: 13px; color: var(--slate); }
+</style>
+</head>
+<body>
+<main>
+
+  <div class="top">
+    <span class="event">LIET 2026</span>
+    <img class="logo" src="aicet_logo.png" alt="AI Centre for Educational Technologies">
+  </div>
+
+  <h1><em>Practising</em> Leadership<br>with Generative AI</h1>
+  <div class="bars" aria-hidden="true"><span class="bg-indigo"></span><span class="bg-amber"></span><span class="bg-teal"></span></div>
+  <p class="subtitle"><b class="c-indigo">Role-Play</b>, <b class="c-amber">Guided Reflection</b>, and <b class="c-teal">Personalised Feedback</b></p>
+  <p class="authors"><strong>Karina Yuen</strong>, Shamantha Shiya Yan, Shane Shiyan Yan, Ben Leong</p>
+
+  <section aria-labelledby="try">
+    <h2 id="try">Try the role-plays</h2>
+    <p class="lead">The four role-plays our students practise, in course order. Pick one and lead the conversation.</p>
+
+    <ul class="cards">
+      <li><a class="card" href="https://scholaistic.com/go/ODVjNTMyMjAtMWZlZC00YjBmLThkN2EtNDQzOGZhY2RlMmQ4OmFkMzA3YWI1LWJjOGYtNGMwYi05ZjEzLWVlNDMxZGYxYzJlOQ==" target="_blank" rel="noopener">
+        <div class="week"><small>Week</small><span>5</span></div>
+        <div class="card-text"><div class="card-title">Responding to criticism from an AI manager</div><div class="card-skill">Receiving feedback</div></div>
+        <svg class="chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
+      </a></li>
+      <li><a class="card" href="https://scholaistic.com/go/ZDA1NDczMDMtM2ViNy00ODU2LWE5MWEtNDkzMDk5NGFjZjMzOmFkMzA3YWI1LWJjOGYtNGMwYi05ZjEzLWVlNDMxZGYxYzJlOQ==" target="_blank" rel="noopener">
+        <div class="week"><small>Week</small><span>6</span></div>
+        <div class="card-text"><div class="card-title">Leading a team review with three AI engineers</div><div class="card-skill">Psychological safety and accountability</div></div>
+        <svg class="chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
+      </a></li>
+      <li><a class="card" href="https://scholaistic.com/go/ZTBmMDVmYjMtZTk1OS00ZjkwLTg5Y2YtNjc1ZjE5ZWExZWVlOmFkMzA3YWI1LWJjOGYtNGMwYi05ZjEzLWVlNDMxZGYxYzJlOQ==" target="_blank" rel="noopener">
+        <div class="week"><small>Week</small><span>9</span></div>
+        <div class="card-text"><div class="card-title">Coaching an AI new manager who struggles to delegate</div><div class="card-skill">Coaching</div></div>
+        <svg class="chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
+      </a></li>
+      <li><a class="card" href="https://scholaistic.com/go/Yzg4ODliMTQtOWQwMS00N2Y4LThiOTctN2U3OWU2YzQ0N2JiOmFkMzA3YWI1LWJjOGYtNGMwYi05ZjEzLWVlNDMxZGYxYzJlOQ==" target="_blank" rel="noopener">
+        <div class="week"><small>Week</small><span>11</span></div>
+        <div class="card-text"><div class="card-title">Negotiating with an AI head chef who has walked out</div><div class="card-skill">Managing conflict</div></div>
+        <svg class="chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
+      </a></li>
+    </ul>
+
+    <div class="how">
+      <p>No account needed: type a name and click <strong>Start chatting</strong>.</p>
+      <p>The links stay open until 24 December 2026.</p>
+    </div>
+  </section>
+
+  <section aria-labelledby="talk">
+    <h2 id="talk" class="teal">Let’s keep talking</h2>
+    <p class="lead">Questions, ideas, or want to try this in your own course? Get in touch.</p>
+    <div class="contact">
+      <a href="mailto:karinayuen@nus.edu.sg">
+        <span class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span>
+        <span><span class="label">Email</span><br><span class="value">karinayuen@nus.edu.sg</span></span>
+      </a>
+      <a href="https://www.linkedin.com/in/karinayuen/" target="_blank" rel="noopener">
+        <span class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg></span>
+        <span><span class="label">LinkedIn</span><br><span class="value">Karina Yuen</span></span>
+      </a>
+    </div>
+  </section>
+
+  <footer>AI Centre for Educational Technologies<br>National University of Singapore</footer>
+
+</main>
+</body>
+</html>
